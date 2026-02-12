@@ -23,7 +23,7 @@ Com base nas alterações acima:
 6. Crie um pull request usando o formato abaixo:
 
 ```bash
-gh pr create --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$(cat <<'EOF'
+gh pr create --draft --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$(cat <<'EOF'
 ## Resumo
 <descrição concisa do que foi feito e por quê>
 

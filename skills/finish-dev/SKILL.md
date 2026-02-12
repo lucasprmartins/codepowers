@@ -60,7 +60,7 @@ Use a ferramenta `AskUserQuestion` para perguntar ao usuário o ID da task relac
 
 ```bash
 # Criar PR
-gh pr create --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$(cat <<'EOF'
+gh pr create --draft --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$(cat <<'EOF'
 ## Resumo
 <descrição concisa do que foi feito e por quê>
 
