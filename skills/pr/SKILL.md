@@ -20,7 +20,7 @@ Com base nas alterações acima:
 3. Execute o agente `codepowers:check` para verificar lint, tipos e build. Corrija problemas encontrados antes de prosseguir.
 4. Envie a branch para o repositório remoto (resource).
 5. Use a ferramenta `AskUserQuestion` para perguntar ao usuário o ID da task relacionada a esta PR. Exemplo de pergunta: "Qual o ID da task relacionada a esta PR? (ex: 82)". Use o valor para compor o título no formato `[TASK-<id>] <tipo>: <descrição>`.
-6. Crie um pull request usando o formato abaixo:
+6. Crie um pull request usando o formato abaixo. **IMPORTANTE: A PR DEVE ser criada como rascunho (--draft). Nunca omita a flag --draft no comando `gh pr create`.**
 
 ```bash
 gh pr create --draft --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$(cat <<'EOF'

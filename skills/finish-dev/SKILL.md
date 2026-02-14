@@ -51,6 +51,8 @@ Pergunte: "Deseja enviar a branch e criar a PR agora?" (opções: "Criar PR" / "
 
 Se o usuário optar por criar:
 
+**IMPORTANTE: A PR DEVE ser criada como rascunho (--draft). Nunca omita a flag --draft no comando `gh pr create`.**
+
 ```bash
 # Enviar branch
 git push -u origin <branch-de-recurso>
