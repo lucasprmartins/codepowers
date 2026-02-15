@@ -86,12 +86,23 @@ Cada etapa é interativa — o usuário pode executar ou pular:
 3. Push + criação da PR com título [TASK-XX] — executar ou pular
 ```
 
+## Discussão Técnica
+
+**Comando:** `/discussion [tema ou dúvida]`
+
+Espaço de diálogo exploratório usando método socrático — sem implementação de código. Para entender o projeto, tirar dúvidas técnicas, avaliar alternativas e estudar conceitos. O Claude faz perguntas que guiam o raciocínio, desafia premissas e explora ângulos não considerados.
+
+- Explora o codebase e busca documentação externa (web, MCPs) para embasar a discussão
+- Se a discussão evoluir para algo implementável, sugere migrar para `/brainstorming`
+- Ao final, oferece salvar um resumo opcional em `docs/discussions/`
+
 ## Skills Utilitárias
 
 Podem ser usadas a qualquer momento, independente do fluxo principal:
 
 | Comando | O que faz |
 |---------|-----------|
+| `/discussion [tema]` | Discussão técnica exploratória — entender código, dúvidas, alternativas, estudo |
 | `/commit` | Cria commits atômicos das alterações atuais, agrupando por unidade lógica |
 | `/pr` | Cria branch + commit + checagem + push + PR em uma operação |
 | `/ui-ux-design [o que criar]` | Cria interfaces UI/UX com estética profissional e distinta |
