@@ -33,11 +33,13 @@ gh pr create --draft --title "[TASK-<id>] <tipo>: <descrição curta>" --body "$
 - <alteração 3>
 
 ## Tipo de mudança
+<!-- ignore-task-list-start -->
 - [ ] Nova funcionalidade (feature)
 - [ ] Correção de bug (bugfix)
 - [ ] Refatoração (sem mudança de comportamento)
 - [ ] Melhoria de performance
 - [ ] Configuração / CI / Infra
+<!-- ignore-task-list-end -->
 
 ## Verificação
 - [ ] <etapas específicas para testar manualmente>
