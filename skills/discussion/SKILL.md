@@ -40,13 +40,13 @@ $ARGUMENTS
 - **Avaliar alternativas** — Comparar abordagens, tecnologias, trade-offs sem compromisso de implementar
 - **Estudo e aprendizado** — Aprofundar em conceitos, entender por que algo funciona de certa forma
 
-## Guardrail: Limite com Brainstorming
+## Guardrail: Limite com Implementação
 
 Se a discussão evoluir naturalmente para algo implementável (ex: o usuário começar a definir requisitos, pedir especificações, ou querer transformar a discussão em ação), **não continue nessa direção**. Em vez disso:
 
 - Use `AskUserQuestion` para sugerir a migração:
-  - "Parece que essa discussão está evoluindo para algo implementável. Quer mudar para /brainstorming para transformar isso em uma especificação?"
-  - Opções: "Sim, mudar para /brainstorming" / "Não, continuar discutindo"
+  - "Parece que essa discussão está evoluindo para algo implementável. Posso entrar em modo planejamento para planejar e implementar isso?"
+  - Opções: "Sim, entrar em modo planejamento" / "Não, continuar discutindo"
 - Se o usuário optar por continuar, respeite e mantenha o foco exploratório
 
 ## Encerramento
@@ -65,5 +65,5 @@ Quando perceber que o tema foi explorado suficientemente (ou o usuário sinaliza
 - **Método socrático** — Guie o raciocínio com perguntas, desafie premissas, explore ângulos novos
 - **Embasamento real** — Fundamente respostas no código do projeto e em documentação quando relevante
 - **Zero implementação** — Exemplos didáticos são OK, código de implementação não
-- **Guardrail ativo** — Se virar brainstorming, sugira migrar para `/brainstorming`
+- **Guardrail ativo** — Se virar implementação, sugira entrar em modo planejamento
 - **Sem pressão de output** — O valor está no diálogo, o resumo é opcional
