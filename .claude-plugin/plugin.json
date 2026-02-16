@@ -1,0 +1,11 @@
+{
+  "name": "codepowers",
+  "description": "Skills, comandos e agentes para dar super poderes ao Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lucas Martins",
+    "email": "lucasprmartins@icloud.com"
+  },
+  "homepage": "https://github.com/lucasprmartins/codepowers",
+  "repository": "https://github.com/lucasprmartins/codepowers"
+}

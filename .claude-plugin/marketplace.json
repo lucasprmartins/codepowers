@@ -1,0 +1,20 @@
+{
+  "name": "codepowers",
+  "description": "Plugin para dar poderes ao Claude Code.",
+  "owner": {
+    "name": "Lucas Martins",
+    "email": "lucasprmartins@icloud.com"
+  },
+  "plugins": [
+    {
+      "name": "codepowers",
+      "description": "Skills, comandos e agentes para dar super poderes ao Claude Code.",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "Lucas Martins",
+        "email": "lucasprmartins@icloud.com"
+      }
+    }
+  ]
+}
