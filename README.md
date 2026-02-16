@@ -103,6 +103,20 @@ Pode ser acionada a qualquer momento para solicitar revisão de código:
 | **reviewer** | Revisão de código + checagem de lint/types/build. Não edita código. | `review`, orquestrado pelo controller |
 | **checker** | Verificação de lint, tipos e build (detecta ecossistema: Node, Rust, Python, Go) | `finish`, `/pr` |
 
+## Output Styles
+
+Posturas de comportamento que o Claude adota durante a sessão. Ative via `/output-style [nome]`:
+
+| Style | Descrição |
+|-------|-----------|
+| **critical** | Engenheiro sênior com pensamento crítico independente |
+| **strict** | Guardião de convenções e padrões do projeto |
+| **security** | Auditor de segurança com foco em OWASP e boas práticas |
+| **mentor** | Mentor paciente que guia o raciocínio e explica o porquê |
+| **pair** | Colega de pair programming colaborativo |
+| **concise** | Executor direto com mínimo de ruído |
+| **architect** | Arquiteto de software com visão sistêmica |
+
 ## Princípios
 
 - **DRY** (Don't Repeat Yourself) - Código sem duplicação
