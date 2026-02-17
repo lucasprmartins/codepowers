@@ -34,18 +34,18 @@ Ao final, pergunta se deseja executar o plano agora.
 
 **Skill:** `execute` (acionada automaticamente pelo plan)
 
-Agrupa tarefas em fases por dependências e despacha implementers em paralelo:
+O controller agrupa tarefas em ondas por dependências e despacha implementers em paralelo:
 
 ```
-Para cada fase de tarefas independentes:
-  1. Despacha implementers em paralelo
+Para cada onda de tarefas independentes:
+  1. Controller despacha implementers em paralelo
      - Cada implementer: implementa, commita, reporta SHAs
      - NÃO faz review, lint, types ou build
-  2. Verificação (lint/types via Bash)
-  3. Aguarda e valida → próxima fase
+  2. Validação mecânica (lint/types via Bash)
+  3. Aguarda e valida → próxima onda
 
 Após TODAS as tarefas concluídas:
-  4. Despacha codepowers:reviewer
+  4. Controller despacha codepowers:reviewer
      - Revisão de código particionada por tarefa
      - Checagem técnica (lint, types, build)
   5. Se houver issues: despacha codepowers:fixer
@@ -100,39 +100,8 @@ Pode ser acionada a qualquer momento para solicitar revisão de código:
 |--------|--------|-------------|
 | **implementer** | Implementa, commita e reporta com SHAs. Sem review ou checks. | `execute` |
 | **fixer** | Corrige issues do reviewer com precisão cirúrgica. Sem checks. | `execute` |
-| **reviewer** | Revisão de código + checagem de lint/types/build. Não edita código. | `review`, `execute` |
+| **reviewer** | Revisão de código + checagem de lint/types/build. Não edita código. | `review`, orquestrado pelo controller |
 | **checker** | Verificação de lint, tipos e build (detecta ecossistema: Node, Rust, Python, Go) | `finish`, `/pr` |
-
-## Modelo por Componente
-
-O codepowers distribui o trabalho entre modelos para otimizar custo sem comprometer qualidade:
-
-- **Haiku** — execução mecânica (lint, commits, PRs)
-- **Sonnet** — produção de código e orquestração
-- **Opus** — gates estratégicos (planejamento e revisão)
-
-### Agentes (aplicado via frontmatter)
-
-| Agente | Modelo | Justificativa |
-|--------|--------|---------------|
-| **checker** | Haiku | Execução mecânica de lint/types/build |
-| **implementer** | Sonnet | Implementação de código com qualidade |
-| **fixer** | Sonnet | Correções cirúrgicas com entendimento de contexto |
-| **reviewer** | Opus | Revisão adversarial — gate de qualidade do pipeline |
-
-### Skills (aplicado via frontmatter)
-
-| Skill | Modelo | Justificativa |
-|-------|--------|---------------|
-| `/commit` | Haiku | Bash-only, staging mecânico |
-| `/pr` | Haiku | Workflow linear com template fixo |
-| `/finish` | Haiku | Orquestrador de 3 etapas simples |
-| `/brainstorm` | Sonnet | Iteração criativa com o usuário |
-| `/execute` | Sonnet | Orquestrador de fases paralelas |
-| `/review` | Sonnet | Despacha reviewer (Opus) via subagente |
-| `/design` | Sonnet | Alto volume de código criativo |
-| `/discussion` | Sonnet | Diálogo socrático multi-turno |
-| `/plan` | Opus | Maior alavancagem — decisões arquiteturais |
 
 ## Output Styles
 
