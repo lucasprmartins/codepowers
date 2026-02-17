@@ -1,83 +1,53 @@
-# Modelo de Prompt do Subagente Code-Reviewer
+# Template: Despachar Reviewer
 
-Use este modelo ao despachar o subagente `codepowers:reviewer` após **TODAS** as tarefas estarem concluídas.
+Preencha os placeholders e envie como prompt do `codepowers:reviewer` após **TODAS** as tarefas concluídas.
 
-```
-Task tool (codepowers:reviewer):
-  description: "Revisão de código e checagem técnica da implementação completa"
-  prompt: |
+---
 
-    Você está revisando a implementação completa de um plano.
+Você está revisando a implementação completa de um plano.
 
-    ## O que foi implementado
+## Tarefas implementadas
 
-    [RESUMO de todas as tarefas concluídas — nome e breve descrição de cada]
+{PARA_CADA_TAREFA:}
+### Tarefa {N}: {NOME}
+- **Diff:** `git diff {SHA_BASE_N}..{SHA_HEAD_N}`
+- **Objetivo:** {O_QUE_DEVERIA_FAZER}
 
-    ## Requisitos/Plano
+## Plano original
 
-    [PLANO ou requisitos originais — texto completo ou referência]
+{PLANO_OU_REQUISITOS — texto completo ou resumo relevante}
 
-    ## Parte 1: Checagem técnica
+## Instruções
 
-    Identifique o ecossistema do projeto verificando os arquivos de configuração na raiz
-    e execute as verificações na ordem: lint → tipos → build.
+Execute nesta ordem:
 
-    Comandos comuns por ecossistema (adapte conforme o projeto):
+1. **Checagem técnica** — lint → tipos → build. Reporte cada resultado.
+2. **Revisão por tarefa** — revise cada tarefa usando o diff correspondente.
+3. **Revisão de integração** — avalie a implementação como um todo: as tarefas se integram? Há inconsistências?
 
-    - Node.js/TypeScript (package.json): lint, check-types/tsc, build
-    - Rust (Cargo.toml): cargo clippy, cargo check, cargo build
-    - Python (pyproject.toml): ruff/flake8, mypy/pyright, python -m build
-    - Go (go.mod): golangci-lint run, go vet, go build
+## Formato de saída
 
-    Reporte cada resultado: passou/falhou + erros específicos com arquivo:linha.
+### Checagem Técnica
+- **Lint:** passou/falhou [detalhes]
+- **Tipos:** passou/falhou [detalhes]
+- **Build:** passou/falhou [detalhes]
 
-    ## Parte 2: Revisão de código (por tarefa)
+### Pontos Fortes
+[O que foi bem feito]
 
-    Revise cada tarefa individualmente usando o diff correspondente.
+### Issues
 
-    [Para cada tarefa, incluir:]
+#### Crítico (Corrigir obrigatoriamente)
+[Bugs, segurança, funcionalidades quebradas, falhas de checagem]
 
-    ### Tarefa N: [nome]
-    - **Diff:** `git diff {SHA_BASE_N}..{SHA_HEAD_N}`
-    - **Objetivo:** [o que a tarefa deveria fazer]
+#### Importante (Corrigir)
+[Arquitetura, funcionalidades ausentes, tratamento de erros]
 
-    Para cada tarefa, verifique:
-    - Alinhamento com os requisitos (postura adversarial — não confie no relatório, leia o código)
-    - Qualidade do código (erros, tipos, nomes, manutenibilidade)
-    - Arquitetura (SOLID, acoplamento, integração)
-    - Segurança e edge cases
+#### Menor (Desejável)
+[Estilo, otimizações]
 
-    ## Parte 3: Revisão de integração
+Para cada issue: `arquivo:linha`, o que está errado, por que importa, como corrigir.
 
-    Após revisar cada tarefa, avalie a implementação como um todo:
-    - As tarefas se integram corretamente?
-    - Há inconsistências entre tarefas (padrões diferentes, duplicação)?
-    - O resultado final atende ao objetivo do plano?
-
-    ## Formato de saída
-
-    ### Checagem Técnica
-    - **Lint:** passou/falhou [detalhes]
-    - **Tipos:** passou/falhou [detalhes]
-    - **Build:** passou/falhou [detalhes]
-
-    ### Pontos Fortes
-    [O que foi bem feito]
-
-    ### Issues
-
-    #### Crítico (Corrigir obrigatoriamente)
-    [Bugs, segurança, perda de dados, funcionalidades quebradas, falhas de lint/types/build]
-
-    #### Importante (Corrigir de bom grado)
-    [Arquitetura, funcionalidades ausentes, tratamento de erros]
-
-    #### Menor (Desejável)
-    [Estilo, otimizações, documentação]
-
-    Para cada issue: arquivo:linha, o que está errado, por que importa, como corrigir.
-
-    ### Avaliação
-    **Pronto para prosseguir?** [Sim / Não / Com correções]
-    **Justificativa:** [1-2 frases]
-```
+### Avaliação
+**Pronto para prosseguir?** [Sim / Não / Com correções]
+**Justificativa:** [1-2 frases]

@@ -1,35 +1,17 @@
-# Modelo de Prompt do Subagente Implementer
+# Template: Despachar Implementer
 
-Use este modelo ao despachar o subagente `codepowers:implementer`.
+Preencha os placeholders e envie como prompt do `codepowers:implementer`.
 
-```
-Task tool (codepowers:implementer):
-  description: "Implementar a Tarefa N: [nome da tarefa]"
-  prompt: |
+---
 
-    Você está implementando a Tarefa N: [nome da tarefa]
+Você está implementando a **Tarefa {N}: {NOME}**.
 
-    ## Descrição da Tarefa
+## Tarefa
 
-    [TEXTO COMPLETO da tarefa do plano — cole aqui, não faça o subagente ler o arquivo]
+{TEXTO_COMPLETO_DA_TAREFA — copiar do plano, não fazer o subagente ler o arquivo}
 
-    ## Contexto
+## Contexto
 
-    [Contextualização: onde isso se encaixa, dependências, contexto arquitetônico]
+{ONDE_SE_ENCAIXA — dependências concluídas, contexto arquitetônico, decisões relevantes}
 
-    ## Instruções
-
-    Se tiver dúvidas sobre requisitos, abordagem ou dependências, pergunte antes de começar.
-
-    **Proibições:** NÃO execute lint, types ou build. Apenas implemente e commite.
-
-    ## Relatório
-
-    Ao finalizar, reporte:
-    - **SHA base**: `git rev-parse HEAD` ANTES de implementar
-    - **SHA HEAD**: `git rev-parse HEAD` APÓS commitar
-    - **Arquivos alterados**: lista dos arquivos criados/modificados/removidos
-    - **Resumo**: 1-2 frases do que foi feito
-
-    Trabalhe em: [diretório]
-```
+Diretório de trabalho: {DIRETÓRIO}
