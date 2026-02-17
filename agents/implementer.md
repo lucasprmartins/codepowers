@@ -1,8 +1,7 @@
 ---
 name: implementer
-description: |
-  Use este agente para implementar tarefas de um plano. Implementa, commita e reporta com SHAs para revisão.
-model: inherit
+description: Use este agente para implementar tarefas de um plano. Implementa, commita e reporta com SHAs para revisão.
+model: sonnet
 tools: Read, Write, Edit, Bash, Grep, Glob
 maxTurns: 30
 ---

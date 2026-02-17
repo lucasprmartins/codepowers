@@ -1,8 +1,7 @@
 ---
 name: fixer
-description: |
-  Use este agente para corrigir issues encontrados pelo reviewer. Aplica correções cirúrgicas e commita.
-model: inherit
+description: Use este agente para corrigir issues encontrados pelo reviewer. Aplica correções cirúrgicas e commita no git.
+model: sonnet
 tools: Read, Write, Edit, Bash, Grep, Glob
 maxTurns: 20
 ---

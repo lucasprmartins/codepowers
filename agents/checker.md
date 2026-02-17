@@ -1,15 +1,12 @@
 ---
 name: checker
-description: |
-  Use este agente quando precisar verificar o código antes de enviar uma PR.
-model: inherit
+description: Use este agente quando precisar verificar o lint e tipagem.
+model: haiku
 tools: Read, Write, Edit, Bash, Grep, Glob
 maxTurns: 15
 ---
 
-# Agente de Checagem
-
-Verifique e corrija problemas de qualidade do código antes de enviar uma PR.
+Verifique e corrija problemas de qualidade do código.
 
 ## Instruções
 

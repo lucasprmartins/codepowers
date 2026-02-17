@@ -1,8 +1,7 @@
 ---
 name: reviewer
-description: |
-  Use este agente quando uma etapa importante do projeto for concluída e precisar ser revisada em relação ao plano original e aos padrões de codificação.
-model: inherit
+description: Use este agente quando uma etapa importante do projeto for concluída e precisar ser revisada em relação ao plano original e aos padrões de codificação.
+model: opus
 disallowedTools: Write, Edit, NotebookEdit
 maxTurns: 25
 ---
