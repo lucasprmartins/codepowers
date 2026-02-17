@@ -1,12 +1,10 @@
 ---
 name: discussion
-description: Discussão técnica exploratória sobre o projeto. Para entender código, tirar dúvidas, avaliar alternativas e estudar conceitos — sem implementação.
-disable-model-invocation: true
+description: Use esta skill para conduzir discussões técnicas exploratórias sobre o projeto. Para entender código, tirar dúvidas, avaliar alternativas e estudar conceitos — sem implementação.
+model: sonnet
 user-invocable: true
-argument-hint: [qual o tema ou dúvida que quer discutir?]
+argument-hint: [tema da discussão]
 ---
-
-# Discussão Técnica Exploratória
 
 ## Visão Geral
 
@@ -55,7 +53,7 @@ Quando perceber que o tema foi explorado suficientemente (ou o usuário sinaliza
 
 - Use `AskUserQuestion` para perguntar: "Quer salvar um resumo desta discussão?"
   - Opções: "Sim, salvar resumo" / "Não, encerrar"
-- Se sim: salve em `docs/discussions/AAAA-MM-DD-<tema>.md` com os principais pontos, conclusões e questões em aberto
+- Se sim: salve em `.codepowers/discussions/AAAA-MM-DD-<tema>.md` com os principais pontos, conclusões e questões em aberto
 - Se não: encerre naturalmente
 
 ## Princípios-chave

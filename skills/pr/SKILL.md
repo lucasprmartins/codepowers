@@ -1,7 +1,7 @@
 ---
 name: pr
-description: Criar uma Pull Request.
-disable-model-invocation: true
+description: Use para criar uma pull request.
+model: haiku
 user-invocable: true
 allowed-tools: Bash
 ---

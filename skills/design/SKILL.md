@@ -1,11 +1,10 @@
 ---
 name: design
-description: Crie interfaces de usuário e experiência de usuário distintas e de nível profissional com alta qualidade de design. Use esta habilidade quando o usuário solicitar a criação de componentes web, páginas, artefatos, pôsteres ou aplicativos (exemplos incluem sites, landing pages, dashboards, componentes React, layouts HTML/CSS ou ao estilizar/embelezar qualquer interface web). Gera código criativo e refinado e design de interface que evita a estética genérica de IA.
+description: Use esta skill para criar interfaces de usuário e experiência de usuário distintas e de nível profissional com alta qualidade de design. Use esta habilidade quando o usuário solicitar a criação de componentes web, páginas, artefatos, pôsteres ou aplicativos (exemplos incluem sites, landing pages, dashboards, componentes React, layouts HTML/CSS ou ao estilizar/embelezar qualquer interface web). Gera código criativo e refinado e design de interface que evita a estética genérica de IA.
+model: sonnet
 user-invocable: true
 argument-hint: [o que deve ser criado?]
 ---
-
-# UI/UX Design
 
 Esta habilidade orienta a criação de UI/UX Design distintas e de nível profissional que evitam a estética genérica e artificial. Implemente código funcional com atenção excepcional aos detalhes estéticos e escolhas criativas.
 

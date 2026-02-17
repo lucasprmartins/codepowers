@@ -1,12 +1,11 @@
 ---
 name: brainstorm
-description: Use quando o usuário tiver uma ideia ou conceito que ainda precisa ser refinado em especificação antes da implementação. Explora a intenção, requisitos e especificação por meio de diálogo colaborativo.
+description: Use quando tiver uma ideia ou conceito que ainda precisa ser refinado em especificação antes da implementação. Explora a intenção, requisitos e especificação por meio de diálogo colaborativo.
+model: sonnet
 disable-model-invocation: true
 user-invocable: true
-argument-hint: [qual a descrição da task ou projeto?]
+argument-hint: [ideia/tarefa/projeto para o brainstorm]
 ---
-
-# Transformando Ideias em Projetos
 
 ## Visão Geral
 
@@ -17,13 +16,14 @@ $ARGUMENTS
 
 Comece entendendo o contexto atual do projeto e, em seguida, faça perguntas uma de cada vez para refinar a ideia. Depois de entender o que você está construindo, apresente a especificação em pequenas seções (200 a 300 palavras), verificando após cada seção se está correta até o momento.
 
+**OBRIGATÓRIO:** Use SEMPRE a ferramenta `AskUserQuestion` para interagir com o usuário. Nunca faça perguntas em texto livre — use a interface interativa com opções clicáveis. Isso vale para todas as etapas: exploração, validação e decisões
+
 ## O Processo
 
 **Entendendo a ideia:**
 - Se o input contiver URLs (Notion, Jira, etc.), busque o conteúdo usando as ferramentas MCP disponíveis antes de qualquer outra coisa
 - Verifique o estado atual do projeto (arquivos, documentação, commits recentes)
 - Faça perguntas uma de cada vez para refinar a ideia
-- **OBRIGATÓRIO:** Use SEMPRE a ferramenta `AskUserQuestion` para fazer perguntas. Nunca faça perguntas em texto livre — use a interface interativa com opções clicáveis
 - Apenas uma pergunta por mensagem - se um tópico precisar de mais exploração, divida-o em várias perguntas
 - Concentre-se em entender: propósito, restrições, critérios de sucesso
 
@@ -89,7 +89,6 @@ Comece entendendo o contexto atual do projeto e, em seguida, faça perguntas uma
 ## Princípios-chave
 
 - **Uma pergunta por vez** - Não sobrecarregue com várias perguntas
-- **Sempre use AskUserQuestion** - Toda pergunta deve usar a ferramenta interativa, nunca texto livre. O usuário deve poder clicar nas opções em vez de digitar
 - **YAGNI implacavelmente** - Remova recursos desnecessários de todos os projetos
 - **Explore alternativas** - Sempre proponha 2 a 3 abordagens antes de decidir
 - **Validação incremental** - Apresente a especificação em seções e valide cada uma

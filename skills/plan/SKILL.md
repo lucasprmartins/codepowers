@@ -1,11 +1,10 @@
 ---
 name: plan
 description: Use quando você tiver uma especificação ou requisitos para uma tarefa de várias etapas, antes de mexer no código.
+model: opus
 user-invocable: true
 argument-hint: [especificação ou requisitos]
 ---
-
-# Planos de Escrita
 
 ## Visão Geral
 
@@ -13,8 +12,8 @@ Escreva planos de implementação abrangentes, assumindo que o engenheiro não t
 
 Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada sobre nosso conjunto de ferramentas ou domínio do problema.
 
-**Avise no início:** "Estou usando a habilidade plan para criar o plano de implementação."
-
+**Princípio fundamental:** Um bom plano é tão claro e detalhado que pode ser executado por um agente sem contexto adicional. A skill `plan` é responsável por criar um plano que seja claro, detalhado e fácil de seguir, garantindo que todas as informações necessárias estejam incluídas para a execução bem-sucedida.
+**Anunciar no início:** "Estou usando a skill `plan` para criar um plano de implementação. Vou seguir um processo estruturado para garantir que o plano seja claro, detalhado e fácil de seguir."
 **Salvar planos em:** `.codepowers/plans/AAAA-MM-DD-<nome-da-funcionalidade>.md`
 
 ## Granularidade de Tarefas em Etapas Contínuas
@@ -71,7 +70,7 @@ git commit -m "feat: adicionar funcionalidade específica"
 **Sobre o campo `Depende de:`:**
 - Obrigatório em todas as tarefas
 - Usar "Nenhuma" para tarefas que podem ser executadas de forma independente
-- Dependências determinam a ordem de execução por ondas nos subagentes (tarefas independentes são executadas em paralelo)
+- Dependências determinam a ordem de execução por fases nos subagentes (tarefas independentes são executadas em paralelo)
 
 ## Lembre-se
 
@@ -86,11 +85,9 @@ git commit -m "feat: adicionar funcionalidade específica"
 Após salvar o plano, use `AskUserQuestion` para perguntar se deseja executar:
 
 - **Pergunta:** "Plano salvo em `.codepowers/plans/<nome_do_arquivo>.md`. Deseja executar agora?"
-- **Opção 1:** "Executar agora" — descrição: "Implementers paralelos por onda, revisão e checagem únicas após todas as tarefas"
+- **Opção 1:** "Executar agora" — descrição: "Implementers paralelos por fase, revisão e checagem únicas após todas as tarefas"
 - **Opção 2:** "Apenas salvar" — descrição: "Salvar o plano para executar depois"
 
 **Se executar agora for escolhido:**
 
-- **SKILL NECESSÁRIA:** Usar `codepowers:execute`
-- Permanecer nesta sessão
-- Implementers paralelos por onda de tarefas independentes, revisão única após conclusão
+- Usar skill `codepowers:execute` para execução estruturada do plano

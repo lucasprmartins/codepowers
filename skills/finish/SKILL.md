@@ -1,18 +1,16 @@
 ---
 name: finish
-description: Use quando a implementação estiver completa e você precisar decidir como integrar o trabalho - orienta a conclusão do trabalho de desenvolvimento apresentando opções estruturadas para checagem e criação de PR.
+description: Use quando a implementação de alguma tarefa ou plano de desenvolvimento estiver completa apresentando opções estruturadas para finalização.
+model: haiku
 user-invocable: true
 ---
-
-# Finalizando um Desenvolvimento
 
 ## Visão Geral
 
 Guie a conclusão do trabalho de desenvolvimento apresentando opções claras e gerenciando o fluxo de trabalho escolhido.
 
 **Princípio fundamental:** Verificar testes (se existirem) → Acionar agente de checagem → Enviar e criar PR.
-
-**Anunciar no início:** "Estou usando a skill finish para concluir este trabalho."
+**Anunciar no início:** "Estou usando a skill `finish` para concluir este trabalho. Vou seguir um processo estruturado para garantir que tudo esteja em ordem antes de criar a PR."
 
 ## O Processo
 

@@ -1,8 +1,9 @@
 ---
 name: commit
-description: Criar commits atômicos no Git, agrupando alterações por unidade lógica.
+description: Use essa skill para criar commits atômicos no git, agrupando alterações por unidade lógica.
+model: haiku
 user-invocable: true
-allowed-tools: Bash
+allowed-tools: Bash(git status), Bash(git diff *), Bash(git branch *), Bash(git log *), Bash(git add *), Bash(git commit *)
 ---
 
 ## Contexto
