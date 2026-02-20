@@ -8,19 +8,13 @@ argument-hint: [especificação ou requisitos]
 
 ## Visão Geral
 
-Escreva planos de implementação abrangentes, assumindo que o engenheiro não tem nenhum contexto sobre nossa base de código e possui um gosto questionável. Documente tudo o que ele precisa saber: quais arquivos modificar para cada tarefa, código e documentação que ele possa precisar consultar. Apresente todo o plano em tarefas menores. DRY (Don't Repeat Yourself - Não se Repita). YAGNI (You Ain't Gonna Need It - Você Não Vai Precisar Disso). Commits frequentes.
+Escreva planos de implementação abrangentes, assumindo que o engenheiro não tem nenhum contexto sobre nossa base de código. Documente tudo o que ele precisa saber: quais arquivos modificar para cada tarefa, código e documentação que ele possa precisar consultar. Apresente todo o plano em tarefas menores. Não repita código ou instruções entre tarefas. Inclua apenas o necessário — sem funcionalidades extras ou especulativas (DRY e YAGNI).
 
 Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada sobre nosso conjunto de ferramentas ou domínio do problema.
 
 **Princípio fundamental:** Um bom plano é tão claro e detalhado que pode ser executado por um agente sem contexto adicional. A skill `plan` é responsável por criar um plano que seja claro, detalhado e fácil de seguir, garantindo que todas as informações necessárias estejam incluídas para a execução bem-sucedida.
 **Anunciar no início:** "Estou usando a skill `plan` para criar um plano de implementação. Vou seguir um processo estruturado para garantir que o plano seja claro, detalhado e fácil de seguir."
 **Salvar planos em:** `.codepowers/plans/AAAA-MM-DD-<nome-da-funcionalidade>.md`
-
-## Granularidade de Tarefas em Etapas Contínuas
-
-**Cada etapa corresponde a uma ação (2 a 5 minutos):**
-- "Implementar a funcionalidade" - etapa
-- "Confirmar" - etapa
 
 ## Cabeçalho do Documento de Plano
 
@@ -54,15 +48,10 @@ Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada s
 - Criar: `caminho/exato/para/arquivo.py`
 - Modificar: `caminho/exato/para/arquivo.py existente:123-145`
 
-**Passo 1: Implementar a funcionalidade**
+**Implementação:**
 
 def function(input):
 return expected
-
-**Passo 2: Confirmar o commit**
-
-git add src/path/file.py
-git commit -m "feat: adicionar funcionalidade específica"
 ```
 
 **Sobre o campo `Depende de:`:**
@@ -74,9 +63,8 @@ git commit -m "feat: adicionar funcionalidade específica"
 
 - Sempre use caminhos de arquivo exatos
 - Complete o código no plano (não use "adicionar validação")
-- Use mensagens de commit descritivas e consistentes
 - Referencie as funcionalidades relevantes com a sintaxe @
-- DRY, YAGNI, commits frequentes
+- DRY, YAGNI
 
 ## Transferência de Execução
 
