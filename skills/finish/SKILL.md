@@ -1,6 +1,6 @@
 ---
 name: finish
-description: Use quando a implementação de alguma tarefa ou plano de desenvolvimento estiver completa apresentando opções estruturadas para finalização.
+description: Use para finalizar o desenvolvimento com testes e checagem antes de criar a PR.
 model: haiku
 user-invocable: true
 ---
