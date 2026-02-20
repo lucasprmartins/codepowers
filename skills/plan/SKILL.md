@@ -34,6 +34,8 @@ Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada s
 
 **Objetivo:** [Uma frase descrevendo o que isso constrói]
 
+**Contexto:** [2-3 frases sobre o problema que resolve]
+
 **Arquitetura:** [2-3 frases sobre a abordagem]
 
 **Pilha de Tecnologias:** [Tecnologias/bibliotecas principais]
