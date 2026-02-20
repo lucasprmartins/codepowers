@@ -63,7 +63,7 @@ Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestio
 | `/plan` | Opus | Plano de implementação detalhado com tarefas atômicas |
 | `/brainstorm` | Sonnet | Refinamento de ideias em especificações via diálogo colaborativo |
 | `/execute` | Sonnet | Orquestração de implementers paralelos por fase |
-| `/review` | Sonnet | Revisão de código + checagem técnica + correções |
+| `/review` | Opus | Revisão de código + checagem técnica + correções |
 | `/design` | Sonnet | Criação de interfaces UI/UX profissionais |
 | `/discussion` | Sonnet | Discussão técnica exploratória (método socrático) |
 | `/commit` | Haiku | Commits atômicos agrupados por unidade lógica |
