@@ -15,31 +15,40 @@
 ## Workflow
 
 ```
-IDEIA → /brainstorm → /plan → /execute → /finish
+IDEIA → /brainstorm → /plan → /execute → /review → /finish
 ```
+
+Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestion`, criando gates de decisão entre etapas.
 
 | Fase | Skill | O que faz |
 |------|-------|-----------|
 | **Brainstorming** | `/brainstorm` | Transforma ideia em especificação via diálogo interativo |
 | **Planejamento** | `/plan` | Cria plano de implementação com tarefas granulares |
-| **Execução** | `/execute` | Despacha implementers em fases paralelas + revisão + correção |
+| **Execução** | `/execute` | Despacha implementers em fases paralelas |
+| **Revisão** | `/review` | Revisão de código + checagem técnica + correções |
 | **Finalização** | `/finish` | Testes → checagem → push → PR |
 
 ### Execução em detalhe
 
 ```
-Para cada fase de tarefas independentes:
-  1. Despacha implementers em paralelo
-     - Cada implementer: implementa, commita, reporta SHAs
-     - NÃO faz review, lint, types ou build
-  2. Aguarda e valida → próxima fase
+/execute:
+  Para cada fase de tarefas independentes:
+    1. Despacha implementers em paralelo
+       - Cada implementer: implementa, commita, reporta SHAs
+       - NÃO faz review, lint, types ou build
+    2. Aguarda e valida → próxima fase
+  → AskUserQuestion: "Continuar para revisão?"
 
-Após TODAS as tarefas concluídas:
-  3. Despacha codepowers:reviewer
-     - Revisão de código particionada por tarefa
+/review:
+  1. Despacha codepowers:reviewer
+     - Revisão de código (por tarefa ou diff geral)
      - Checagem técnica (lint, types, build)
-  4. Se houver issues: despacha codepowers:fixer
-  5. Aciona finish
+  2. Se houver issues: despacha codepowers:fixer
+  3. Verificação pós-fixer (lint/types/build)
+  → AskUserQuestion: "Finalizar desenvolvimento?"
+
+/finish:
+  Testes → checagem → push → PR
 ```
 
 ## Skills
@@ -49,7 +58,7 @@ Após TODAS as tarefas concluídas:
 | `/plan` | Opus | Plano de implementação detalhado com tarefas atômicas |
 | `/brainstorm` | Sonnet | Refinamento de ideias em especificações via diálogo colaborativo |
 | `/execute` | Sonnet | Orquestração de implementers paralelos por fase |
-| `/review` | Sonnet | Revisão de código sob demanda via subagente reviewer |
+| `/review` | Sonnet | Revisão de código + checagem técnica + correções |
 | `/design` | Sonnet | Criação de interfaces UI/UX profissionais |
 | `/discussion` | Sonnet | Discussão técnica exploratória (método socrático) |
 | `/commit` | Haiku | Commits atômicos agrupados por unidade lógica |
@@ -81,12 +90,11 @@ skills/
 ├── plan/           # Planejamento de implementação
 ├── execute/        # Orquestração de subagentes
 │   ├── SKILL.md
-│   ├── implementer-prompt.md
+│   └── implementer-prompt.md
+├── review/         # Revisão de código + correções
+│   ├── SKILL.md
 │   ├── review-prompt.md
 │   └── fixer-prompt.md
-├── review/         # Revisão de código
-│   ├── SKILL.md
-│   └── code-review.md
 ├── design/         # Criação de UI/UX
 ├── discussion/     # Discussão técnica
 ├── commit/         # Commits atômicos
