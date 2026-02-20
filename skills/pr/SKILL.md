@@ -3,7 +3,7 @@ name: pr
 description: Use para criar uma pull request.
 model: haiku
 user-invocable: true
-allowed-tools: Bash
+allowed-tools: Bash(git status), Bash(git diff*), Bash(git branch*), Bash(gh pr create*)
 ---
 
 ## Contexto
