@@ -46,7 +46,7 @@ SHA_HEAD=$(git rev-parse HEAD)
 
 ## 2. Despachar Reviewer
 
-Preencha o template em `./review-prompt.md` e despache `codepowers:reviewer`:
+Preencha o template em `./reviewer-prompt.md` e despache `codepowers:reviewer`:
 
 - **Vindo do pipeline:** preencher per-task diffs com SHAs dos implementers
 - **Uso ad-hoc:** usar diff único com merge-base, sem breakdown por tarefa
@@ -62,7 +62,7 @@ Se o reviewer encontrar issues:
 
 ## Templates de Prompt
 
-- `./review-prompt.md` — Despachar `codepowers:reviewer`
+- `./reviewer-prompt.md` — Despachar `codepowers:reviewer`
 - `./fixer-prompt.md` — Despachar `codepowers:fixer`
 
 ## Regras

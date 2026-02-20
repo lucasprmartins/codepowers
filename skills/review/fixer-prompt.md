@@ -4,6 +4,7 @@ Preencha os placeholders e envie como prompt do `codepowers:fixer`.
 
 ---
 
+```markdown
 Corrija os issues encontrados na revisão de código.
 
 ## Issues
@@ -15,3 +16,4 @@ Corrija os issues encontrados na revisão de código.
 {RESUMO_DO_QUE_FOI_IMPLEMENTADO — para entender o propósito do código}
 
 Diretório de trabalho: {DIRETÓRIO}
+```
