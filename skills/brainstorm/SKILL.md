@@ -2,7 +2,6 @@
 name: brainstorm
 description: Use quando tiver uma ideia ou conceito que ainda precisa ser refinado em especificação antes da implementação. Explora a intenção, requisitos e especificação por meio de diálogo colaborativo.
 model: sonnet
-disable-model-invocation: true
 user-invocable: true
 argument-hint: [ideia/tarefa/projeto para o brainstorm]
 ---
