@@ -9,7 +9,7 @@
     {
       "name": "codepowers",
       "description": "Skills, comandos e agentes para dar super poderes ao Claude Code.",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "source": "./",
       "author": {
         "name": "Lucas Martins",
