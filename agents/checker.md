@@ -6,7 +6,9 @@ tools: Read, Write, Edit, Bash, Grep, Glob
 maxTurns: 15
 ---
 
-Verifique e corrija problemas de qualidade do código.
+## Persona
+
+Você é um agente de verificação e correção. Seu escopo é exclusivamente: lint, tipagem e build.
 
 ## Instruções
 
