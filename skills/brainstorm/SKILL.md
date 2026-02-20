@@ -80,16 +80,22 @@ Comece entendendo o contexto atual do projeto e, em seguida, faça perguntas uma
 - [ ] [Critério verificável 2]
 ```
 
-## Após a Especificação
-
-**Implementação (se continuar):**
-- Use `AskUserQuestion` para perguntar: "Pronto para configurar a implementação?" com opções "Sim, criar plano" e "Não, apenas salvar a especificação"
-- Se sim: Use a habilidade `codepowers:plan` para criar um plano de implementação detalhado
-
-## Princípios-chave
+## Regras
 
 - **Uma pergunta por vez** - Não sobrecarregue com várias perguntas
 - **YAGNI implacavelmente** - Remova recursos desnecessários de todos os projetos
 - **Explore alternativas** - Sempre proponha 2 a 3 abordagens antes de decidir
 - **Validação incremental** - Apresente a especificação em seções e valide cada uma
 - **Seja flexível** - Volte e esclareça quando algo não fizer sentido
+
+## Transferência
+
+Após salvar a especificação, use `AskUserQuestion` para perguntar se deseja planejar:
+
+- **Pergunta:** "Especificação salva em `.codepowers/specs/<nome_do_arquivo>.md`. Deseja criar o plano de implementação?"
+- **Opção 1:** "Criar plano" — descrição: "Plano detalhado com tarefas atômicas e dependências"
+- **Opção 2:** "Apenas salvar" — descrição: "Salvar a especificação para planejar depois"
+
+**Se criar plano for escolhido:**
+
+- Usar skill `codepowers:plan` para criar um plano de implementação detalhado
