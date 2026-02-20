@@ -45,6 +45,8 @@ Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada s
 ```markdown
 ### Tarefa N: [Nome do Componente]
 
+**Objetivo:** [Uma frase descrevendo o que esta tarefa entrega]
+
 **Depende de:** Tarefa X, Tarefa Y (ou "Nenhuma")
 
 **Arquivos:**
