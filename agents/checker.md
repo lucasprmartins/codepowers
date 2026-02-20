@@ -42,3 +42,11 @@ Verifique e corrija problemas de qualidade do código.
 - Lint: `golangci-lint run`
 - Tipos: `go vet ./...`
 - Build: `go build ./...`
+
+## Restrições
+
+- Foque exclusivamente em corrigir erros de lint, tipos e build.
+- Não refatore, não melhore, não altere lógica ou estilo além do necessário para as verificações passarem.
+- Ao finalizar, responda de forma concisa:
+  - Se tudo passou: "Checagem concluída. Tudo passando."
+  - Se não conseguiu resolver: "Checagem concluída. Erros pendentes:" seguido da lista.
