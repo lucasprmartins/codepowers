@@ -8,7 +8,7 @@ argument-hint: [especificação ou requisitos]
 
 ## Visão Geral
 
-Escreva planos de implementação abrangentes, assumindo que o engenheiro não tem nenhum contexto sobre nossa base de código e possui um gosto questionável. Documente tudo o que ele precisa saber: quais arquivos modificar para cada tarefa, código, documentação que ele possa precisar consultar e como verificar. Apresente todo o plano em tarefas menores. DRY (Don't Repeat Yourself - Não se Repita). YAGNI (You Ain't Gonna Need It - Você Não Vai Precisar Disso). Commits frequentes.
+Escreva planos de implementação abrangentes, assumindo que o engenheiro não tem nenhum contexto sobre nossa base de código e possui um gosto questionável. Documente tudo o que ele precisa saber: quais arquivos modificar para cada tarefa, código e documentação que ele possa precisar consultar. Apresente todo o plano em tarefas menores. DRY (Don't Repeat Yourself - Não se Repita). YAGNI (You Ain't Gonna Need It - Você Não Vai Precisar Disso). Commits frequentes.
 
 Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada sobre nosso conjunto de ferramentas ou domínio do problema.
 
@@ -20,7 +20,6 @@ Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada s
 
 **Cada etapa corresponde a uma ação (2 a 5 minutos):**
 - "Implementar a funcionalidade" - etapa
-- "Verificar se funciona conforme esperado" - etapa
 - "Confirmar" - etapa
 
 ## Cabeçalho do Documento de Plano
@@ -58,12 +57,7 @@ Assuma que ele é um desenvolvedor experiente, mas que não conhece quase nada s
 def function(input):
 return expected
 
-**Passo 2: Verificar se funciona**
-
-Executar: `[comando de verificação relevante]`
-Esperado: [resultado esperado]
-
-**Passo 3: Confirmar o commit**
+**Passo 2: Confirmar o commit**
 
 git add src/path/file.py
 git commit -m "feat: adicionar funcionalidade específica"
@@ -78,7 +72,7 @@ git commit -m "feat: adicionar funcionalidade específica"
 
 - Sempre use caminhos de arquivo exatos
 - Complete o código no plano (não use "adicionar validação")
-- Use comandos exatos com a saída esperada
+- Use mensagens de commit descritivas e consistentes
 - Referencie as funcionalidades relevantes com a sintaxe @
 - DRY, YAGNI, commits frequentes
 
