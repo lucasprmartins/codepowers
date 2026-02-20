@@ -15,7 +15,7 @@
 ## Workflow
 
 ```
-IDEIA → /brainstorm → /plan → /execute → /review → /finish
+IDEIA → /brainstorm → /plan → /execute → /review → /finish → /pr
 ```
 
 Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestion`, criando gates de decisão entre etapas.
@@ -26,7 +26,8 @@ Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestio
 | **Planejamento** | `/plan` | Cria plano de implementação com tarefas granulares |
 | **Execução** | `/execute` | Despacha implementers em fases paralelas |
 | **Revisão** | `/review` | Revisão de código + checagem técnica + correções |
-| **Finalização** | `/finish` | Testes → checagem → push → PR |
+| **Finalização** | `/finish` | Testes → checagem |
+| **Pull Request** | `/pr` | Branch + push + PR em rascunho |
 
 ### Execução em detalhe
 
@@ -48,7 +49,11 @@ Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestio
   → AskUserQuestion: "Finalizar desenvolvimento?"
 
 /finish:
-  Testes → checagem → push → PR
+  Testes → checagem
+  → AskUserQuestion: "Criar PR?"
+
+/pr:
+  Branch + push + PR em rascunho
 ```
 
 ## Skills
@@ -63,7 +68,7 @@ Cada skill faz seu trabalho e devolve o controle ao usuário via `AskUserQuestio
 | `/discussion` | Sonnet | Discussão técnica exploratória (método socrático) |
 | `/commit` | Haiku | Commits atômicos agrupados por unidade lógica |
 | `/pr` | Haiku | Branch + push + PR em uma operação |
-| `/finish` | Haiku | Testes, checagem e criação de PR |
+| `/finish` | Haiku | Testes e checagem |
 
 ## Agentes
 
